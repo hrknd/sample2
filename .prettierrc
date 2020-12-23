@@ -1,0 +1,20 @@
+{
+  "singleQuote": true,
+  "trailingComma": all,
+  "overrides": [
+    {
+      "files": ".prettierrc",
+      "options": {
+        "parser": "json",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": "*.blade.php",
+      "options": {
+        "parser": "html",
+        "tabWidth": 4
+      }
+    }
+  ]
+}
