@@ -1,17 +1,25 @@
 import React from 'react';
 import Layout from '../../../components/common/layout';
 
-const Bookmark = () => {
-  let foo: string = 'React';
-  const bar: string = 'TypeScript';
+interface Props {
+  bookmarks: Array<any>;
+}
 
+const BookmarkListPage: React.FC<Props> = ({ bookmarks }) => {
   return (
-    <Layout title="testReact">
-      <p>
-        Bookmark {foo} + {bar}
-      </p>
-    </Layout>
+    <div>
+      <ul className="list-group">
+        {bookmarks.length > 0 &&
+          bookmarks.map((bookmark, index) => {
+            return (
+              <li className="list-group-item" key={index}>
+                <p>Title:{bookmark.title}</p>
+              </li>
+            );
+          })}
+      </ul>
+    </div>
   );
 };
 
-export default Bookmark;
+export default BookmarkListPage;

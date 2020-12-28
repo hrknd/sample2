@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-use App\Http\Controllers\TestController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookmarkController;
 
 /*
@@ -26,7 +26,8 @@ Route::get('/temphome', [TestController::class, 'index']);
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Route::get('/bookmarks', [BookmarkController::class, 'index'])->name(
-    'bookmark.index'
-);
+Route::group(['middlewere' => ['auth']], function () {
+    Route::get('/bookmarks', [BookmarkController::class, 'index'])->name(
+        'bookmark.index'
+    );
+});
