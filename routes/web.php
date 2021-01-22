@@ -25,7 +25,7 @@ Route::get('/temphome', [TestController::class, 'index']);
 
 Auth::routes();
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+//Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middlewere' => ['auth']], function () {
     Route::get('/bookmarks', [BookmarkController::class, 'index'])->name(
         'bookmark.index'
