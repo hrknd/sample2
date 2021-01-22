@@ -1,14 +1,1 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[1],{
-
-/***/ "./resources/js/Pages/Home/index.tsx_":
-/*!********************************************!*\
-  !*** ./resources/js/Pages/Home/index.tsx_ ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: Unexpected token (5:9)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n| \n| const Home = () => {\n>   let foo: string = 'React';\n|   const bar: string = 'TypeScript';\n| ");
-
-/***/ })
-
-}]);
+(window.webpackJsonp=window.webpackJsonp||[]).push([[1],{3:function(e,t,n){"use strict";var r=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var a=r(n(1)),l=r(n(5));t.default=function(e){var t=e.bookmarks;return a.default.createElement(l.default,null,a.default.createElement("div",{className:"row"},a.default.createElement("div",{className:"col-sm-8"},a.default.createElement("ul",{className:"list-group"},t.length>0&&t.map((function(e,t){return a.default.createElement("li",{className:"list-group-item",key:t},a.default.createElement("p",null,"Title:",e.title))}))))))}},5:function(e,t,n){"use strict";var r=this&&this.__createBinding||(Object.create?function(e,t,n,r){void 0===r&&(r=n),Object.defineProperty(e,r,{enumerable:!0,get:function(){return t[n]}})}:function(e,t,n,r){void 0===r&&(r=n),e[r]=t[n]}),a=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),l=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var n in e)"default"!==n&&Object.prototype.hasOwnProperty.call(e,n)&&r(t,e,n);return a(t,e),t};Object.defineProperty(t,"__esModule",{value:!0});var u=l(n(1));t.default=function(e){var t=e.children;return u.createElement("div",{className:"container"},t)}}}]);
