@@ -33,8 +33,16 @@ Route::group(['middlewere' => ['auth']], function () {
     Route::get('/bookmark/add', [BookmarkController::class, 'add'])->name(
         'bookmark.add'
     );
+    Route::get('/bookmark/view/{bookmark}', [
+        BookmarkController::class,
+        'view',
+    ])->name('bookmark.view');
     Route::post('/bookmark/preview', [
         BookmarkController::class,
         'getPreviewData',
     ])->name('bookmark.preview');
+    Route::post('/bookmark/make-active', [
+        BookmarkController::class,
+        'makeActive',
+    ])->name('bookmark.active');
 });
