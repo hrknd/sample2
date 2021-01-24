@@ -1,4 +1,6 @@
+import { InertiaLink } from '@inertiajs/inertia-react';
 import React from 'react';
+import route from 'ziggy-js';
 
 const Menu = () => {
   return (
@@ -22,14 +24,20 @@ const Menu = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <InertiaLink
+                className="nav-link"
+                href={route('bookmark.index').url()}
+              >
                 Bookmarks
-              </a>
+              </InertiaLink>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link">
+              <InertiaLink
+                className="nav-link"
+                href={route('bookmark.add').url()}
+              >
                 Bookmark Add
-              </a>
+              </InertiaLink>
             </li>
           </ul>
 
