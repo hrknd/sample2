@@ -3,7 +3,7 @@ require('./bootstrap');
 import { InertiaApp } from '@inertiajs/inertia-react';
 import React from 'react';
 import { render } from 'react-dom';
-import { Ziggy } from './ziggy';
+import { Ziggy } from '../assets/js/ziggy';
 
 window.Ziggy = Ziggy;
 
