@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'hrknd@outlook.jp',
             'password' => \bcrypt('password'),
         ]);
-        \App\Models\Bookmark::factory(10)->create([
-            'is_active' => 1,
-        ]);
+        // \App\Models\Bookmark::factory(10)->create([
+        //     'is_active' => 1,
+        // ]);
     }
 }
