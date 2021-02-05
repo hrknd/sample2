@@ -43,9 +43,13 @@ const Menu = () => {
 
           <ul className="navbar-nav ml-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <InertiaLink
+                className="nav-link"
+                method="post"
+                href={route('logout').url()}
+              >
                 Logout
-              </a>
+              </InertiaLink>
             </li>
           </ul>
         </div>
