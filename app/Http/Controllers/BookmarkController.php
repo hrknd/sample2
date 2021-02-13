@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Middleware\HandleInertiaRequests;
 use Inertia\Inertia;
 use App\Models\Bookmark;
+use App\Services\BookmarkService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
@@ -29,17 +30,15 @@ class BookmarkController extends Controller
         return Inertia::render('Bookmark/Add/index');
     }
 
-    public function getPreviewData(Request $request)
-    {
+    public function getPreviewData(
+        Request $request,
+        BookmarkService $bookmarkService
+    ) {
         $postData = $this->validate($request, [
             'link' => ['required'],
         ]);
-        $data = \OpenGraph::fetch($postData['link'], true);
-        // return Inertia::render('Bookmark/Add/index', [
-        //     'date' => $data,
-        //     'link' => $postData['link'],
-        // ]);
-        \logger($data);
+        $data = $bookmarkService->getBookmarkData($postData['link']);
+
         $bookmark = Bookmark::create([
             'title' => $data['title'],
             'description' => $data['description'],
