@@ -1,41 +1,78 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
 
-/***/ "./resources/js/Pages/Bookmark/View/index.tsx":
-/*!****************************************************!*\
-  !*** ./resources/js/Pages/Bookmark/View/index.tsx ***!
-  \****************************************************/
+/***/ "./resources/js/Pages/Bookmark/Add/index.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Bookmark/Add/index.tsx ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var inertia_1 = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
-var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
 var layout_1 = __importDefault(__webpack_require__(/*! ../../../components/common/layout */ "./resources/js/components/common/layout/index.tsx"));
-var BookmarkViewPage = function (_a) {
-    var bookmark = _a.bookmark;
-    var handleSave = function (event) {
+var loader_1 = __importDefault(__webpack_require__(/*! ../../../components/common/loader */ "./resources/js/components/common/loader/index.tsx"));
+var BookmarkAddPage = function () {
+    var _a = react_1.useState({
+        link: '',
+        title: 'Some headcoded title',
+        showLoader: false,
+    }), state = _a[0], setState = _a[1];
+    var handleChange = function (event) {
+        var _a;
+        setState(__assign(__assign({}, state), (_a = {}, _a[event.currentTarget.name] = event.currentTarget.value, _a)));
+    };
+    var handlSubmit = function (event) {
         event.preventDefault();
-        inertia_1.Inertia.post('/bookmark/make-active', { id: bookmark.id });
+        inertia_1.Inertia.post('/bookmark/preview', state, {
+            onStart: function () {
+                setState(__assign(__assign({}, state), { showLoader: true }));
+            },
+        });
     };
     return (react_1.default.createElement(layout_1.default, null,
         react_1.default.createElement("div", { className: "row" },
-            react_1.default.createElement("div", { className: "col-md-6" }, bookmark.title && (react_1.default.createElement("div", { className: "card" },
-                react_1.default.createElement("div", { className: "card-header" }, bookmark.title),
-                react_1.default.createElement("div", { className: "card-body" },
-                    react_1.default.createElement("p", null,
-                        "Url: ",
-                        bookmark.url),
-                    react_1.default.createElement("p", null, bookmark.description),
-                    react_1.default.createElement("div", { className: "mb-3" },
-                        react_1.default.createElement("img", { src: bookmark.img_url, alt: bookmark.title, width: "100%" })),
-                    react_1.default.createElement("button", { className: "btn btn-primary", onClick: handleSave }, "Save"))))))));
+            react_1.default.createElement("div", { className: "col-sm-8" }, state.showLoader ? (react_1.default.createElement(loader_1.default, null)) : (react_1.default.createElement("form", { onSubmit: handlSubmit },
+                react_1.default.createElement("div", { className: "form-group" },
+                    react_1.default.createElement("label", { htmlFor: "link" }, "Link"),
+                    react_1.default.createElement("input", { type: "text", name: "link", className: "form-control", onChange: handleChange }))))))));
 };
-exports.default = BookmarkViewPage;
+exports.default = BookmarkAddPage;
 
 
 /***/ }),
@@ -87,6 +124,30 @@ exports.default = Layout;
 
 /***/ }),
 
+/***/ "./resources/js/components/common/loader/index.tsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/common/loader/index.tsx ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_fontawesome_1 = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+var free_solid_svg_icons_1 = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+var Loader = function () {
+    return react_1.default.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: free_solid_svg_icons_1.faSync, spin: true, size: "5x" });
+};
+exports.default = Loader;
+
+
+/***/ }),
+
 /***/ "./resources/js/components/common/nav/index.tsx":
 /*!******************************************************!*\
   !*** ./resources/js/components/common/nav/index.tsx ***!
@@ -117,7 +178,7 @@ var Menu = function () {
                         react_1.default.createElement(inertia_react_1.InertiaLink, { className: "nav-link", href: ziggy_js_1.default('bookmark.add').url() }, "Bookmark Add"))),
                 react_1.default.createElement("ul", { className: "navbar-nav ml-auto" },
                     react_1.default.createElement("li", { className: "nav-item" },
-                        react_1.default.createElement("a", { className: "nav-link", href: "#" }, "Logout")))))));
+                        react_1.default.createElement(inertia_react_1.InertiaLink, { className: "nav-link", method: "post", href: ziggy_js_1.default('logout').url() }, "Logout")))))));
 };
 exports.default = Menu;
 
