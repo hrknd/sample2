@@ -8,6 +8,7 @@ use App\Models\Bookmark;
 use App\Services\BookmarkService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 
 class BookmarkController extends Controller
@@ -80,5 +81,14 @@ class BookmarkController extends Controller
         $bookmark->is_active = 1;
         $bookmark->save();
         return redirect()->route('bookmark.index');
+    }
+
+    public function redirect(Bookmark $bookmark)
+    {
+        DB::table($bookmark->getTable())
+            ->where('id', $bookmark->id)
+            ->increment('views');
+
+        return redirect($bookmark->url);
     }
 }

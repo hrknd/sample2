@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\BookmarkController;
 use App\Http\Controllers\WelcomeController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +20,6 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::get('/', [WelcomeController::class, 'index'])->name('index');
-
 
 Auth::routes();
 
@@ -43,4 +43,8 @@ Route::group(['middlewere' => ['auth']], function () {
         BookmarkController::class,
         'makeActive',
     ])->name('bookmark.active');
+    Route::get('/bookmark/redirect/{bookmark}', [
+        BookmarkController::class,
+        'redirect',
+    ])->name('bookmark.redirect');
 });

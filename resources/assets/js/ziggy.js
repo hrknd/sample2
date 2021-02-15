@@ -1,5 +1,6 @@
 var Ziggy = {
     namedRoutes: {
+        index: { uri: '/', methods: ['GET', 'HEAD'], domain: null },
         login: { uri: 'login', methods: ['GET', 'HEAD'], domain: null },
         logout: { uri: 'logout', methods: ['POST'], domain: null },
         register: {
@@ -55,6 +56,11 @@ var Ziggy = {
         'bookmark.active': {
             uri: 'bookmark/make-active',
             methods: ['POST'],
+            domain: null,
+        },
+        'bookmark.redirect': {
+            uri: 'bookmark/redirect/{bookmark}',
+            methods: ['GET', 'HEAD'],
             domain: null,
         },
     },
