@@ -13,6 +13,11 @@ class Bookmark extends Model implements GetsCleanedUp
 
     protected $guarded = [];
 
+    public function tags()
+    {
+        return $this->morphToMany(Tag::class, 'taggable');
+    }
+
     public function cleanUp(CleanupConfig $config): void
     {
         $config->olderThanDays(1)->scope(function ($query) {

@@ -60,6 +60,8 @@ class BookmarkController extends Controller
         if (Auth::user()->id != $bookmark->user_id) {
             abort(401, 'You art not allowed to view this bookmark');
         }
+        $bookmark->load(['tags']);
+
         return Inertia::render('Bookmark/View/index', [
             'bookmark' => $bookmark,
         ]);
