@@ -1,1 +1,188 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{10:function(e,t,a){"use strict";var l=this&&this.__createBinding||(Object.create?function(e,t,a,l){void 0===l&&(l=a),Object.defineProperty(e,l,{enumerable:!0,get:function(){return t[a]}})}:function(e,t,a,l){void 0===l&&(l=a),e[l]=t[a]}),r=this&&this.__setModuleDefault||(Object.create?function(e,t){Object.defineProperty(e,"default",{enumerable:!0,value:t})}:function(e,t){e.default=t}),n=this&&this.__importStar||function(e){if(e&&e.__esModule)return e;var t={};if(null!=e)for(var a in e)"default"!==a&&Object.prototype.hasOwnProperty.call(e,a)&&l(t,e,a);return r(t,e),t},u=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var i=n(a(1)),o=u(a(31));t.default=function(e){var t=e.children;return i.createElement(i.Fragment,null,i.createElement("div",{className:"mb-3"},i.createElement(o.default,null)),i.createElement("div",{className:"container"},t),";")}},31:function(e,t,a){"use strict";var l=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var r=a(5),n=l(a(1)),u=l(a(13));t.default=function(){return n.default.createElement("nav",{className:"navbar navbar-expand-md navbar-light bg-white shadow-sm"},n.default.createElement("div",{className:"container"},n.default.createElement("a",{className:"navbar-brand",href:"{{ url('/') }}"},"Bookmark"),n.default.createElement("button",{className:"navbar-toggler",type:"button","data-toggle":"collapse","data-target":"#navbarSupportedContent","aria-controls":"navbarSupportedContent","aria-expanded":"false","aria-label":"{{ __('Toggle navigation') }}"},n.default.createElement("span",{className:"navbar-toggler-icon"})),n.default.createElement("div",{className:"collapse navbar-collapse",id:"navbarSupportedContent"},n.default.createElement("ul",{className:"navbar-nav mr-auto"},n.default.createElement("li",{className:"nav-item"},n.default.createElement(r.InertiaLink,{className:"nav-link",href:u.default("bookmark.index").url()},"Bookmarks")),n.default.createElement("li",{className:"nav-item"},n.default.createElement(r.InertiaLink,{className:"nav-link",href:u.default("bookmark.add").url()},"Bookmark Add"))),n.default.createElement("ul",{className:"navbar-nav ml-auto"},n.default.createElement("li",{className:"nav-item"},n.default.createElement(r.InertiaLink,{className:"nav-link",method:"post",href:u.default("logout").url()},"Logout"))))))}},37:function(e,t,a){"use strict";var l=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var r=a(5),n=l(a(1)),u=l(a(13)),i=a(14),o=a(15);t.default=function(e){var t=e.bookmark;return n.default.createElement("li",{className:"list-group-item"},n.default.createElement("div",{className:"row"},""!=t.img_url&&n.default.createElement("div",{className:"col-md-2"},n.default.createElement(r.InertiaLink,{href:u.default("bookmark.view",{bookmark:t.id}).url()},n.default.createElement("img",{src:t.img_url,alt:t.title,width:"100%"}))),n.default.createElement("div",{className:"col-md-9"},n.default.createElement("span",null,n.default.createElement(r.InertiaLink,{href:u.default("bookmark.view",{bookmark:t.id}).url()},t.title)),n.default.createElement("br",null),n.default.createElement("span",null,t.description),n.default.createElement("br",null),n.default.createElement("small",null,n.default.createElement(i.FontAwesomeIcon,{icon:o.faEye}),n.default.createElement("span",{className:"pl-3"}," ",t.views))),n.default.createElement("div",{className:"col-md-1"},n.default.createElement("a",{href:u.default("bookmark.redirect",{bookmark:t.id}).url(),target:"_blank"},"Visit"))))}},7:function(e,t,a){"use strict";var l=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(t,"__esModule",{value:!0});var r=l(a(1)),n=l(a(37)),u=l(a(10));t.default=function(e){var t=e.bookmarks;return r.default.createElement(u.default,null,r.default.createElement("div",{className:"row"},r.default.createElement("div",{className:"col-sm-8"},r.default.createElement("ul",{className:"list-group"},t.length>0&&t.map((function(e,t){return r.default.createElement(n.default,{key:t,bookmark:e})}))))))}}}]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
+
+/***/ "./resources/js/Pages/Bookmark/Add/index.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/Pages/Bookmark/Add/index.tsx ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var inertia_1 = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var layout_1 = __importDefault(__webpack_require__(/*! ../../../components/common/layout */ "./resources/js/components/common/layout/index.tsx"));
+var loader_1 = __importDefault(__webpack_require__(/*! ../../../components/common/loader */ "./resources/js/components/common/loader/index.tsx"));
+var BookmarkAddPage = function () {
+    var _a = react_1.useState({
+        link: '',
+        title: 'Some headcoded title',
+        showLoader: false,
+    }), state = _a[0], setState = _a[1];
+    var handleChange = function (event) {
+        var _a;
+        setState(__assign(__assign({}, state), (_a = {}, _a[event.currentTarget.name] = event.currentTarget.value, _a)));
+    };
+    var handlSubmit = function (event) {
+        event.preventDefault();
+        inertia_1.Inertia.post('/bookmark/preview', state, {
+            onStart: function () {
+                setState(__assign(__assign({}, state), { showLoader: true }));
+            },
+        });
+    };
+    return (react_1.default.createElement(layout_1.default, null,
+        react_1.default.createElement("div", { className: "row" },
+            react_1.default.createElement("div", { className: "col-sm-8" }, state.showLoader ? (react_1.default.createElement(loader_1.default, null)) : (react_1.default.createElement("form", { onSubmit: handlSubmit },
+                react_1.default.createElement("div", { className: "form-group" },
+                    react_1.default.createElement("label", { htmlFor: "link" }, "Link"),
+                    react_1.default.createElement("input", { type: "text", name: "link", className: "form-control", onChange: handleChange }))))))));
+};
+exports.default = BookmarkAddPage;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/common/layout/index.tsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/common/layout/index.tsx ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var nav_1 = __importDefault(__webpack_require__(/*! ../nav */ "./resources/js/components/common/nav/index.tsx"));
+var Layout = function (_a) {
+    var children = _a.children;
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: "mb-3" },
+            React.createElement(nav_1.default, null)),
+        React.createElement("div", { className: "container" }, children),
+        ";"));
+};
+exports.default = Layout;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/common/loader/index.tsx":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/common/loader/index.tsx ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var react_fontawesome_1 = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
+var free_solid_svg_icons_1 = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
+var Loader = function () {
+    return react_1.default.createElement(react_fontawesome_1.FontAwesomeIcon, { icon: free_solid_svg_icons_1.faSync, spin: true, size: "5x" });
+};
+exports.default = Loader;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/common/nav/index.tsx":
+/*!******************************************************!*\
+  !*** ./resources/js/components/common/nav/index.tsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var inertia_react_1 = __webpack_require__(/*! @inertiajs/inertia-react */ "./node_modules/@inertiajs/inertia-react/dist/index.js");
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var ziggy_js_1 = __importDefault(__webpack_require__(/*! ziggy-js */ "./node_modules/ziggy-js/dist/js/route.min.js"));
+var Menu = function () {
+    return (react_1.default.createElement("nav", { className: "navbar navbar-expand-md navbar-light bg-white shadow-sm" },
+        react_1.default.createElement("div", { className: "container" },
+            react_1.default.createElement("a", { className: "navbar-brand", href: "{{ url('/') }}" }, "Bookmark"),
+            react_1.default.createElement("button", { className: "navbar-toggler", type: "button", "data-toggle": "collapse", "data-target": "#navbarSupportedContent", "aria-controls": "navbarSupportedContent", "aria-expanded": "false", "aria-label": "{{ __('Toggle navigation') }}" },
+                react_1.default.createElement("span", { className: "navbar-toggler-icon" })),
+            react_1.default.createElement("div", { className: "collapse navbar-collapse", id: "navbarSupportedContent" },
+                react_1.default.createElement("ul", { className: "navbar-nav mr-auto" },
+                    react_1.default.createElement("li", { className: "nav-item" },
+                        react_1.default.createElement(inertia_react_1.InertiaLink, { className: "nav-link", href: ziggy_js_1.default('bookmark.index').url() }, "Bookmark List")),
+                    react_1.default.createElement("li", { className: "nav-item" },
+                        react_1.default.createElement(inertia_react_1.InertiaLink, { className: "nav-link", href: ziggy_js_1.default('bookmark.add').url() }, "Bookmark Add"))),
+                react_1.default.createElement("ul", { className: "navbar-nav ml-auto" },
+                    react_1.default.createElement("li", { className: "nav-item" },
+                        react_1.default.createElement(inertia_react_1.InertiaLink, { className: "nav-link", method: "post", href: ziggy_js_1.default('logout').url() }, "Logout")))))));
+};
+exports.default = Menu;
+
+
+/***/ })
+
+}]);
