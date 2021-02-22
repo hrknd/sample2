@@ -28,7 +28,7 @@ const Menu = () => {
                 className="nav-link"
                 href={route('bookmark.index').url()}
               >
-                Bookmarks
+                Bookmark List
               </InertiaLink>
             </li>
             <li className="nav-item">
