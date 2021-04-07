@@ -43,6 +43,10 @@ Route::group(['middlewere' => ['auth']], function () {
         BookmarkController::class,
         'makeActive',
     ])->name('bookmark.active');
+    route::post('/bookmark/update', [
+        BookmarkController::class,
+        'hendleUpdate',
+    ])->name('bookmark.update');
     Route::get('/bookmark/redirect/{bookmark}', [
         BookmarkController::class,
         'redirect',

@@ -9,7 +9,7 @@ const Layout: React.FC<Props> = ({ children }) => {
       <div className="mb-3">
         <Menu />
       </div>
-      <div className="container">{children}</div>;
+      <div className="container">{children}</div>
     </React.Fragment>
   );
 };
