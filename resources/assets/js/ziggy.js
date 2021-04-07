@@ -64,9 +64,9 @@ var Ziggy = {
             domain: null,
         },
     },
-    baseUrl: 'http://192.168.50.10/',
+    baseUrl: 'http://127.0.0.1/',
     baseProtocol: 'http',
-    baseDomain: '192.168.50.10',
+    baseDomain: '127.0.0.1',
     basePort: false,
     defaultParameters: [],
 };

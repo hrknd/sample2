@@ -35,9 +35,10 @@
         "@inertiajs/inertia": "^0.6.2",
         "@inertiajs/inertia-react": "^0.4.3",
         "@types/react": "^16.9.56",
-        "@types/react-select": "^3.0.28",
+        "@types/react-select": "^4.0.14",
         "@types/ziggy-js": "^0.9.0",
-        "react-select": "^3.1.1",
+        "npm": "^7.8.0",
+        "react-select": "^4.3.0",
         "ziggy-js": "^0.9.4"
     }
 }
