@@ -6,6 +6,8 @@ use App\Http\Middleware\HandleInertiaRequests;
 use Inertia\Inertia;
 use App\Models\Bookmark;
 use App\Services\BookmarkService;
+use App\Services\YuruhuwaService;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -33,24 +35,14 @@ class BookmarkController extends Controller
 
     public function getPreviewData(
         Request $request,
-        BookmarkService $bookmarkService
+        YuruhuwaService $yuruhuwaService
     ) {
         $postData = $this->validate($request, [
             'link' => ['required'],
         ]);
-        $data = $bookmarkService->getBookmarkData($postData['link']);
-
-        $bookmark = Bookmark::create([
-            'title' => $data['title'],
-            'description' => $data['description'],
-            'type' => $data['type'],
-            'url' => $postData['link'],
-            'img_url' => $data['image'],
-            'user_id' => $request->user()->id,
-        ]);
-        return redirect()->route('bookmark.view', [
-            'bookmark' => $bookmark->id,
-        ]);
+        $data = $yuruhuwaService->getYuruhuwa($postData['link']);
+        var_dump($data);
+        return $data;
     }
 
     public function view(Bookmark $bookmark)
