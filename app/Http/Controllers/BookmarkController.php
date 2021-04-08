@@ -17,15 +17,7 @@ class BookmarkController extends Controller
 {
     public function index()
     {
-        $bookmarks = Bookmark::query()
-            ->where('user_id', Auth::user()->id)
-            ->where('is_active', 1)
-            ->orderByDesc('updated_at')
-            ->get();
-        \logger(Auth::user()->id);
-        return Inertia::render('Bookmark/List/index', [
-            'bookmarks' => $bookmarks,
-        ]);
+        return Inertia::render('Bookmark/Add/index');
     }
 
     public function add()
@@ -38,11 +30,14 @@ class BookmarkController extends Controller
         YuruhuwaService $yuruhuwaService
     ) {
         $postData = $this->validate($request, [
-            'link' => ['required'],
+            'query' => ['required'],
         ]);
-        $data = $yuruhuwaService->getYuruhuwa($postData['link']);
-        var_dump($data);
-        return $data;
+
+        $data = $yuruhuwaService->getYuruhuwa($postData['query']);
+
+        return Inertia::render('Yuruhuwa/View/index', [
+            'data' => $data,
+        ]);
     }
 
     public function view(Bookmark $bookmark)

@@ -1,0 +1,15 @@
+自律神経とストレス
+
+object(stdClass)[322]
+  public 'result_code' => int 1
+  public 'result_list' => 
+    array (size=160)
+      0 => 
+        object(stdClass)[324]
+          public 'title' => string '実験的副交感神経緊張状態の自律神経系への影響' (length=66)
+          public 'src_url1' => string '19830133800009' (length=14)
+          public 'src_url2' => string '1984127052' (length=10)
+          public 'score' => float 0.085364436723457
+          public 'doc_id' => string '1123170' (length=7)
+      1 => 
+        object(stdClass)[326]

@@ -7,8 +7,7 @@ interface Props {}
 
 const BookmarkAddPage: React.FC<Props> = () => {
   const [state, setState] = useState({
-    link: '',
-    title: 'Some headcoded title',
+    query: '',
     showLoader: false,
   });
 
@@ -37,11 +36,11 @@ const BookmarkAddPage: React.FC<Props> = () => {
           ) : (
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="link">Link</label>
+                <label htmlFor="query">検索テキスト </label>
                 <input
                   type="text"
-                  name="link"
-                  value={state.link}
+                  name="query"
+                  value={state.query}
                   className="form-control"
                   onChange={handleChange}
                 />

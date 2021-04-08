@@ -6,8 +6,8 @@ const Menu = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div className="container">
-        <a className="navbar-brand" href="{{ url('/') }}">
-          Bookmark
+        <a className="navbar-brand" href="/">
+          検索機能習作
         </a>
         <button
           className="navbar-toggler"
@@ -26,17 +26,9 @@ const Menu = () => {
             <li className="nav-item">
               <InertiaLink
                 className="nav-link"
-                href={route('bookmark.index').url()}
-              >
-                Bookmark List
-              </InertiaLink>
-            </li>
-            <li className="nav-item">
-              <InertiaLink
-                className="nav-link"
                 href={route('bookmark.add').url()}
               >
-                Bookmark Add
+                ゆるふわ検索
               </InertiaLink>
             </li>
           </ul>
