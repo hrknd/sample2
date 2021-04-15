@@ -24,31 +24,31 @@ Route::get('/', [WelcomeController::class, 'index'])->name('index');
 Auth::routes();
 
 //Route::get('/home', [HomeController::class, 'index'])->name('home');
-Route::group(['middlewere' => ['auth']], function () {
-    Route::get('/bookmarks', [BookmarkController::class, 'index'])->name(
-        'bookmark.index'
-    );
-    Route::get('/bookmark/add', [BookmarkController::class, 'add'])->name(
-        'bookmark.add'
-    );
-    Route::get('/bookmark/view/{bookmark}', [
-        BookmarkController::class,
-        'view',
-    ])->name('bookmark.view');
-    Route::post('/bookmark/preview', [
-        BookmarkController::class,
-        'getPreviewData',
-    ])->name('bookmark.preview');
-    Route::post('/bookmark/make-active', [
-        BookmarkController::class,
-        'makeActive',
-    ])->name('bookmark.active');
-    route::post('/bookmark/update', [
-        BookmarkController::class,
-        'hendleUpdate',
-    ])->name('bookmark.update');
-    Route::get('/bookmark/redirect/{bookmark}', [
-        BookmarkController::class,
-        'redirect',
-    ])->name('bookmark.redirect');
-});
+//Route::group(['middlewere' => ['auth']], function () {
+Route::get('/bookmarks', [BookmarkController::class, 'index'])->name(
+    'bookmark.index'
+);
+Route::get('/bookmark/add', [BookmarkController::class, 'add'])->name(
+    'bookmark.add'
+);
+Route::get('/bookmark/view/{bookmark}', [
+    BookmarkController::class,
+    'view',
+])->name('bookmark.view');
+Route::post('/bookmark/preview', [
+    BookmarkController::class,
+    'getPreviewData',
+])->name('bookmark.preview');
+Route::post('/bookmark/make-active', [
+    BookmarkController::class,
+    'makeActive',
+])->name('bookmark.active');
+route::post('/bookmark/update', [
+    BookmarkController::class,
+    'hendleUpdate',
+])->name('bookmark.update');
+Route::get('/bookmark/redirect/{bookmark}', [
+    BookmarkController::class,
+    'redirect',
+])->name('bookmark.redirect');
+//});

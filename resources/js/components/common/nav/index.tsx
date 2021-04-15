@@ -6,9 +6,7 @@ const Menu = () => {
   return (
     <nav className="navbar navbar-expand-md navbar-light bg-white shadow-sm">
       <div className="container">
-        <a className="navbar-brand" href="/">
-          検索機能習作
-        </a>
+        検索機能習作
         <button
           className="navbar-toggler"
           type="button"
@@ -20,7 +18,6 @@ const Menu = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
